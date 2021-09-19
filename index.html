@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Display Design</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .product-display {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .small-image img {
+      width: 90px;
+      height: 90px;
+      display: block;
+      cursor: pointer;
+      opacity: .5;
+      margin: 0 10px 10px 0;
+    }
+
+    .small-image img:hover {
+      opacity: 1;
+      border: 1px solid black;
+    }
+
+    .big-image img {
+      width: auto;
+      height: 380px;
+      border: 1px solid black;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="product-display">
+    <div class="small-image">
+      <img src="./1.jpg" alt="" onmouseenter="myfunction(this)">
+      <img src="./2.jpg" alt="" onmouseenter="myfunction(this)">
+      <img src="./3.jpg" alt="" onmouseenter="myfunction(this)">
+      <img src="./4.jpg" alt="" onmouseenter="myfunction(this)">
+    </div>
+
+    <div class="big-image">
+      <img id="full" src="./5.jpg" alt="">
+    </div>
+
+  </div>
+
+
+  <script>
+    const myfunction = (smallImage) => {
+      let fullImage = document.getElementById("full");
+      fullImage.src = smallImage.src;
+    }
+  </script>
+</body>
+
+</html>
